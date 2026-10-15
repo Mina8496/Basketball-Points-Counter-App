@@ -47,7 +47,7 @@ class _pointContinerState extends State<pointContiner> {
                       // add 1 point
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.orange,
+                          backgroundColor: Colors.orange,
                           minimumSize: Size(150, 50)
                           ),
                         onPressed: () {
@@ -66,7 +66,7 @@ class _pointContinerState extends State<pointContiner> {
                      const SizedBox(height: 30,),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.orange,
+                          backgroundColor: Colors.orange,
                           minimumSize: Size(150, 50)
                           ),
                         onPressed: () {
@@ -85,7 +85,7 @@ class _pointContinerState extends State<pointContiner> {
                       SizedBox(height: 30,),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.orange,
+                          backgroundColor: Colors.orange,
                           minimumSize: Size(150, 50)
                           ),
                         onPressed: () {
@@ -127,7 +127,7 @@ class _pointContinerState extends State<pointContiner> {
                       // add 1 point
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.orange,
+                          backgroundColor: Colors.orange,
                           minimumSize: Size(150, 50)
                           ),
                         onPressed: () {
@@ -146,7 +146,7 @@ class _pointContinerState extends State<pointContiner> {
                      const SizedBox(height: 30,),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.orange,
+                          backgroundColor: Colors.orange,
                           minimumSize: Size(150, 50)
                           ),
                         onPressed: () {
@@ -165,7 +165,7 @@ class _pointContinerState extends State<pointContiner> {
                       SizedBox(height: 30,),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.orange,
+                          backgroundColor: Colors.orange,
                           minimumSize: Size(150, 50)
                           ),
                         onPressed: () {
@@ -187,7 +187,7 @@ class _pointContinerState extends State<pointContiner> {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.orange,
+                backgroundColor: Colors.orange,
                 fixedSize: Size(150, 50),
               ),
               onPressed: () {
