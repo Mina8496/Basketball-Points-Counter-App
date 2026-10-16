@@ -186,7 +186,7 @@ class HomePage extends StatelessWidget {
                   fixedSize: const Size(150, 50),
                 ),
                 onPressed: () {},
-                child: Text(
+                child: const Text(
                   "Result",
                   style: TextStyle(
                     fontSize: 18,
