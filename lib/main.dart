@@ -4,10 +4,12 @@ import 'package:w_shopapp_01/manger/counter_cubit.dart';
 import 'package:w_shopapp_01/manger/counter_state.dart';
 
 void main() {
-  runApp(PointContiner());
+  runApp(const PointContiner());
 }
 
 class PointContiner extends StatelessWidget {
+  const PointContiner({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -26,16 +28,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int teamAPoints = 0;
-    int teamBPoints = 0;
     return BlocConsumer<CounterCubit, CounterState>(
-      listener: (context, state) {
-        if (state is CounterAIncrementState) {
-          teamAPoints = BlocProvider.of<CounterCubit>(context).teamAPoint;
-        } else {
-          teamBPoints = BlocProvider.of<CounterCubit>(context).teamBPoint;
-        }
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
@@ -58,15 +52,18 @@ class HomePage extends StatelessWidget {
                           style: TextStyle(fontSize: 32),
                         ),
                         Text(
-                          "$teamAPoints",
+                          "${BlocProvider.of<CounterCubit>(context).teamAPoint}",
                           style: const TextStyle(fontSize: 150),
                         ),
                         // add 1 point
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.orange,
-                              minimumSize: Size(150, 50)),
-                          onPressed: () {},
+                              minimumSize: const Size(150, 50)),
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncrement(team: 'A', buttomNumber: 1);
+                          },
                           child: const Text(
                             "Add 1 Point",
                             style: TextStyle(fontSize: 18, color: Colors.black),
@@ -79,8 +76,11 @@ class HomePage extends StatelessWidget {
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.orange,
-                              minimumSize: Size(150, 50)),
-                          onPressed: () {},
+                              minimumSize: const Size(150, 50)),
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncrement(team: 'A', buttomNumber: 2);
+                          },
                           child: const Text(
                             "Add 2 Point",
                             style: TextStyle(fontSize: 18, color: Colors.black),
@@ -93,8 +93,11 @@ class HomePage extends StatelessWidget {
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.orange,
-                              minimumSize: Size(150, 50)),
-                          onPressed: () {},
+                              minimumSize: const Size(150, 50)),
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncrement(team: 'A', buttomNumber: 3);
+                          },
                           child: const Text(
                             "Add 3 Point",
                             style: TextStyle(fontSize: 18, color: Colors.black),
@@ -121,15 +124,18 @@ class HomePage extends StatelessWidget {
                           style: TextStyle(fontSize: 32),
                         ),
                         Text(
-                          "$teamBPoints",
+                          "${BlocProvider.of<CounterCubit>(context).teamBPoint}",
                           style: const TextStyle(fontSize: 150),
                         ),
                         // add 1 point
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.orange,
-                              minimumSize: Size(150, 50)),
-                          onPressed: () {},
+                              minimumSize: const Size(150, 50)),
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncrement(team: 'B', buttomNumber: 1);
+                          },
                           child: const Text(
                             "Add 1 Point",
                             style: TextStyle(fontSize: 18, color: Colors.black),
@@ -142,22 +148,28 @@ class HomePage extends StatelessWidget {
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.orange,
-                              minimumSize: Size(150, 50)),
-                          onPressed: () {},
+                              minimumSize: const Size(150, 50)),
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncrement(team: 'B', buttomNumber: 2);
+                          },
                           child: const Text(
                             "Add 2 Point",
                             style: TextStyle(fontSize: 18, color: Colors.black),
                           ),
                         ),
                         // add 3 point
-                        SizedBox(
+                        const SizedBox(
                           height: 30,
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.orange,
-                              minimumSize: Size(150, 50)),
-                          onPressed: () {},
+                              minimumSize: const Size(150, 50)),
+                          onPressed: () {
+                            BlocProvider.of<CounterCubit>(context)
+                                .teamIncrement(team: 'B', buttomNumber: 3);
+                          },
                           child: const Text(
                             "Add 3 Point",
                             style: TextStyle(fontSize: 18, color: Colors.black),
@@ -171,7 +183,7 @@ class HomePage extends StatelessWidget {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.orange,
-                  fixedSize: Size(150, 50),
+                  fixedSize: const Size(150, 50),
                 ),
                 onPressed: () {},
                 child: Text(
